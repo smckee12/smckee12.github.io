@@ -1,0 +1,28 @@
+title: Sean McKee
+description: Strategy, technology, and operations leader. MBA candidate at UC Berkeley Haas.
+url: "https://smckee12.github.io"
+baseurl: ""
+lang: en
+author: Sean McKee
+timezone: America/Los_Angeles
+permalink: pretty
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+exclude:
+  - README.md
+  - PLAN.md
+  - LICENSES.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .local
+  - .agents
+  - .conversation
+  - .replit
+  - .replitignore
+  - node_modules
+  - .gitignore
+  - .npmrc
+  - "*.pdf"
+  - "*.txt"
