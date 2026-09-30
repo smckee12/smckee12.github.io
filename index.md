@@ -24,10 +24,10 @@ permalink: /
 <section class="intro-band" aria-labelledby="intro-band-title" markdown="1">
 <div class="section-kicker">A LITTLE ABOUT ME <span aria-hidden="true">✳</span></div>
 
-## A background built across *different worlds.*
+## A background built on leadership
 {: #intro-band-title }
 
-From leading teams in the U.S. Army to enterprise technology consulting and defense-tech program management, I’ve worked where decisions carry weight and collaboration makes the difference.
+From leading large teams in the U.S. Army to technology consulting and program management, I’ve worked in complex environments where prioritization and collaboration determine success.
 
 <a class="inline-arrow" href="{{ '/about/' | relative_url }}">More about me <span aria-hidden="true">↗</span></a>
 
@@ -41,17 +41,17 @@ From leading teams in the U.S. Army to enterprise technology consulting and defe
     <div class="focus-list">
       <article class="focus-card">
         <span class="focus-index">01</span>
-        <div><h3>Find the signal</h3><p>Turn complex requirements and competing priorities into a clear path forward.</p></div>
+        <div><h3>Work through ambiguity</h3><p>Turn complex requirements and competing priorities into a clear path forward.</p></div>
         <span class="focus-glyph" aria-hidden="true">↗</span>
       </article>
       <article class="focus-card">
         <span class="focus-index">02</span>
-        <div><h3>Bring people together</h3><p>Connect perspectives across teams, disciplines, and organizations.</p></div>
+        <div><h3>Leverage expertise</h3><p>Connect perspectives across teams, disciplines, and organizations.</p></div>
         <span class="focus-glyph" aria-hidden="true">✳</span>
       </article>
       <article class="focus-card">
         <span class="focus-index">03</span>
-        <div><h3>Make it real</h3><p>Build practical plans and follow through on the work that matters.</p></div>
+        <div><h3>Execute</h3><p>Build practical plans and follow through on the work that matters.</p></div>
         <span class="focus-glyph" aria-hidden="true">→</span>
       </article>
     </div>
