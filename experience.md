@@ -5,7 +5,11 @@ description: Sean McKee's work in defense technology, consulting, and the U.S. A
 permalink: /experience/
 ---
 
-<div class="page-shell interior">
+<div class="page-shell interior photo-first">
+  <figure class="role-photo">
+    <img src="{{ '/assets/images/mrap.webp' | relative_url }}" alt="An MRAP mine-resistant vehicle photographed in Afghanistan" width="1200" height="750" fetchpriority="high">
+    <figcaption>Illustrative archival photo of an MRAP in Afghanistan; not a photo of my unit or service. <a href="{{ '/licenses/' | relative_url }}">Photo credit</a>.</figcaption>
+  </figure>
   <div class="page-intro">
     <span class="section-kicker">03 / EXPERIENCE</span>
     <h1>Work that moves <em>things forward.</em></h1>
@@ -42,11 +46,6 @@ Enterprise Technology Consultant · Denver, Colorado
 - Led Deloitte Denver Asians and Allies events, facilitating conversations about inclusion in the workplace.
 
 </article>
-
-    <figure class="role-photo">
-      <img src="{{ '/assets/images/mrap.webp' | relative_url }}" alt="An MRAP mine-resistant vehicle photographed in Afghanistan" width="1200" height="750" loading="lazy">
-      <figcaption>Illustrative archival photo of an MRAP in Afghanistan; not a photo of my unit or service. <a href="{{ '/licenses/' | relative_url }}">Photo credit</a>.</figcaption>
-    </figure>
 
 <article class="role-card" markdown="1">
 <div class="role-meta"><span>03 / MILITARY SERVICE</span><span>2016–2021</span></div>
