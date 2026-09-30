@@ -6,6 +6,10 @@ permalink: /
 ---
 
 <div class="page-shell home">
+  <div class="photo-frame">
+    <img src="{{ '/assets/images/boulder.webp' | relative_url }}" alt="Green Mountain and the landscape around Boulder, Colorado" width="1200" height="750" fetchpriority="high">
+    <span class="photo-index">FIELD NOTES / 01</span>
+  </div>
   <section class="hero" aria-labelledby="intro-title">
     <div class="eyebrow"><span class="eyebrow-line"></span> HELLO, I'M SEAN MCKEE <span class="eyebrow-star" aria-hidden="true">✳</span></div>
     <h1 id="intro-title">Ideas into action<span class="accent-mark">.</span></h1>
@@ -54,10 +58,6 @@ From leading teams in the U.S. Army to enterprise technology consulting and defe
   </section>
 
   <section class="image-story" aria-labelledby="story-title">
-    <div class="photo-frame">
-      <img src="{{ '/assets/images/boulder.webp' | relative_url }}" alt="Green Mountain and the landscape around Boulder, Colorado" width="1200" height="750" loading="lazy">
-      <span class="photo-index">FIELD NOTES / 01</span>
-    </div>
 <div class="story-copy" markdown="1">
 <span class="section-kicker">WHERE I'VE BEEN</span>
 

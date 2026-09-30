@@ -5,7 +5,11 @@ description: Learn about Sean McKee's background, education, and interests.
 permalink: /about/
 ---
 
-<div class="page-shell interior">
+<div class="page-shell interior photo-first">
+  <figure class="editorial-photo">
+    <img src="{{ '/assets/images/berkeley.webp' | relative_url }}" alt="A view down Campanile Way from Sather Tower at UC Berkeley" width="1200" height="750" fetchpriority="high">
+    <figcaption>In and around Berkeley. Illustrative photo; see <a href="{{ '/licenses/' | relative_url }}">image credits</a>.</figcaption>
+  </figure>
   <div class="page-intro">
     <span class="section-kicker">02 / ABOUT</span>
     <h1>More than a <em>job title.</em></h1>
@@ -23,11 +27,6 @@ I served as an infantry officer and program manager in the U.S. Army, then worke
 I am pursuing a Master of Business Administration at the University of California, Berkeley, Haas School of Business, with certificates in Business Analytics and AI for Business projected for May 2027. At Haas, I serve as Co-President of the Veterans Club and VP of Allyship for the Asian Business Club.
 
 </section>
-
-  <figure class="editorial-photo">
-    <img src="{{ '/assets/images/berkeley.webp' | relative_url }}" alt="A view down Campanile Way from Sather Tower at UC Berkeley" width="1200" height="750" loading="lazy">
-    <figcaption>In and around Berkeley. Illustrative photo; see <a href="{{ '/licenses/' | relative_url }}">image credits</a>.</figcaption>
-  </figure>
 
   <section class="about-grid" aria-label="Education and beyond work">
     <article class="outline-card">
