@@ -1,0 +1,299 @@
+/* Horizontal portfolio prototype — layered over the site's regular page styles. */
+.site-main.horizontal-ready {
+  overflow: visible;
+}
+
+.horizontal-controls {
+  width: min(100% - 48px, 1312px);
+  margin: 0 auto;
+  padding: 18px clamp(0px, 1vw, 14px) 17px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.horizontal-controls-label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.horizontal-mode select {
+  min-height: 38px;
+  padding: 7px 30px 7px 10px;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font: 700 12px/1.2 var(--sans);
+}
+.horizontal-mode select:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+.horizontal-help {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.horizontal-section-nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 27px);
+}
+
+.horizontal-section-nav a {
+  padding: 8px 1px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+
+.horizontal-section-nav a[aria-current="page"] {
+  color: var(--accent-strong);
+  border-color: var(--accent);
+}
+
+.horizontal-stepper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.horizontal-stepper button {
+  display: inline-grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 21px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.horizontal-stepper button:hover:not(:disabled) {
+  background: var(--dark);
+  color: var(--dark-ink);
+}
+
+.horizontal-stepper button:disabled {
+  color: var(--muted);
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.horizontal-stage {
+  display: flex;
+  width: 100%;
+  height: min(74dvh, 900px);
+  min-height: 220px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--paper);
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-stage[data-mode="soft"] {
+  scroll-snap-type: x proximity;
+}
+
+.horizontal-stage[data-mode="continuous"] {
+  scroll-snap-type: none;
+}
+.horizontal-stage[data-mode="soft"] .horizontal-panel,
+.horizontal-stage[data-mode="continuous"] .horizontal-panel {
+  scroll-snap-stop: normal;
+}
+
+.horizontal-panel {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+  outline: none;
+}
+
+.horizontal-panel:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: -4px;
+}
+
+.horizontal-panel > .page-shell {
+  width: min(100% - 48px, 960px);
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.horizontal-panel .home {
+  padding-top: 0;
+}
+
+.horizontal-panel .hero {
+  min-height: 580px;
+}
+
+.horizontal-panel .interior {
+  padding-bottom: 56px;
+}
+
+.horizontal-panel .intro-band,
+.horizontal-panel .chapter,
+.horizontal-panel .image-story,
+.horizontal-panel .closing-card {
+  margin-bottom: 70px;
+}
+
+.horizontal-panel .next-link {
+  margin-bottom: 30px;
+}
+
+.horizontal-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.horizontal-load-state {
+  width: min(100% - 48px, 700px);
+  min-height: 340px;
+  margin: 80px auto;
+  padding: 40px;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+}
+
+.horizontal-load-state h2 {
+  margin: 15px 0;
+  font-size: clamp(32px, 5vw, 54px);
+}
+
+.horizontal-load-state p {
+  max-width: 480px;
+  color: var(--muted);
+}
+
+.horizontal-load-state .button {
+  margin: 10px 12px 0 0;
+  cursor: pointer;
+}
+
+.horizontal-skeleton {
+  width: min(100% - 48px, 760px);
+  margin: 80px auto;
+}
+
+.horizontal-skeleton span {
+  display: block;
+  height: 13px;
+  margin: 16px 0;
+  background: var(--rule);
+  opacity: .62;
+  animation: horizontal-breathe 1.6s ease-in-out infinite alternate;
+}
+
+.horizontal-skeleton span:first-child {
+  width: 24%;
+  height: 9px;
+}
+
+.horizontal-skeleton span:nth-child(2) {
+  width: 80%;
+  height: 66px;
+  margin: 27px 0;
+}
+
+.horizontal-skeleton span:nth-child(3) { width: 91%; }
+.horizontal-skeleton span:nth-child(4) { width: 72%; }
+
+@keyframes horizontal-breathe {
+  from { opacity: .42; }
+  to { opacity: .76; }
+}
+
+@media (max-width: 760px) {
+  .horizontal-controls {
+    width: 100%;
+    padding: 13px 20px 12px;
+    grid-template-columns: 1fr auto;
+    gap: 10px 14px;
+  }
+
+  .horizontal-mode {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .horizontal-stepper {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .horizontal-section-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .horizontal-section-nav a {
+    font-size: 10px;
+  }
+
+  .horizontal-stage {
+    height: min(70dvh, 760px);
+    min-height: 220px;
+  }
+
+  .horizontal-panel > .page-shell {
+    width: min(100% - 40px, 960px);
+  }
+
+  .horizontal-panel .hero {
+    min-height: 570px;
+  }
+
+  .horizontal-load-state,
+  .horizontal-skeleton {
+    width: min(100% - 40px, 700px);
+    margin-top: 48px;
+  }
+
+  .horizontal-load-state { padding: 28px 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .horizontal-stage { scroll-behavior: auto; }
+  .horizontal-skeleton span { animation: none; }
+}

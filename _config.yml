@@ -11,6 +11,7 @@ plugins:
   - jekyll-sitemap
 exclude:
   - README.md
+  - NewChange1.md
   - PLAN.md
   - LICENSES.md
   - Gemfile
