@@ -1,4 +1,4 @@
-/* Horizontal portfolio prototype — layered over the site's regular page styles. */
+/* Horizontal portfolio — layered over the site's regular page styles. */
 .site-main.horizontal-ready {
   overflow: visible;
 }
@@ -8,35 +8,12 @@
   margin: 0 auto;
   padding: 18px clamp(0px, 1vw, 14px) 17px;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 20px;
   border-bottom: 1px solid var(--rule);
 }
 
-.horizontal-controls-label {
-  display: block;
-  margin-bottom: 5px;
-  color: var(--muted);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-.horizontal-mode select {
-  min-height: 38px;
-  padding: 7px 30px 7px 10px;
-  border: 1px solid var(--rule);
-  border-radius: 0;
-  background: var(--surface);
-  color: var(--ink);
-  font: 700 12px/1.2 var(--sans);
-}
-.horizontal-mode select:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 4px;
-}
 .horizontal-help {
   grid-column: 1 / -1;
   margin: 0;
@@ -110,18 +87,6 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-}
-
-.horizontal-stage[data-mode="soft"] {
-  scroll-snap-type: x proximity;
-}
-
-.horizontal-stage[data-mode="continuous"] {
-  scroll-snap-type: none;
-}
-.horizontal-stage[data-mode="soft"] .horizontal-panel,
-.horizontal-stage[data-mode="continuous"] .horizontal-panel {
-  scroll-snap-stop: normal;
 }
 
 .horizontal-panel {
@@ -245,24 +210,19 @@
   .horizontal-controls {
     width: 100%;
     padding: 13px 20px 12px;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr);
     gap: 10px 14px;
   }
 
-  .horizontal-mode {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
   .horizontal-stepper {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: end;
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
   }
 
   .horizontal-section-nav {
     grid-column: 1 / -1;
-    grid-row: 2;
+    grid-row: 1;
     justify-content: space-between;
     gap: 6px;
   }

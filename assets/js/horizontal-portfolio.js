@@ -31,10 +31,6 @@
   var controls = document.createElement("div");
   controls.className = "horizontal-controls";
   controls.innerHTML =
-    '<label class="horizontal-mode"><span class="horizontal-controls-label">Scroll behavior</span>' +
-    '<select aria-label="Choose horizontal scrolling behavior">' +
-    '<option value="section">Section snap</option><option value="soft">Soft snap</option>' +
-    '<option value="continuous">Continuous</option></select></label>' +
     '<nav class="horizontal-section-nav" aria-label="Portfolio sections"></nav>' +
     '<div class="horizontal-stepper"><button type="button" data-step="-1" aria-label="Previous section">←</button>' +
     '<button type="button" data-step="1" aria-label="Next section">→</button></div>';
@@ -53,7 +49,6 @@
   stage.id = "portfolio-panels";
   stage.tabIndex = 0;
   stage.setAttribute("aria-label", "Portfolio sections. Use the left and right arrow keys to move between sections.");
-  stage.dataset.mode = "section";
 
   var status = document.createElement("p");
   status.className = "horizontal-status";
@@ -179,10 +174,6 @@
     var button = event.target.closest("[data-step]");
     if (!button) return;
     moveTo(activeIndex + Number(button.dataset.step), { pushHistory: true, focus: true });
-  });
-
-  controls.querySelector("select").addEventListener("change", function (event) {
-    stage.dataset.mode = event.target.value;
   });
 
   stage.addEventListener("keydown", function (event) {

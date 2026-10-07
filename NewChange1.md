@@ -51,4 +51,5 @@ I want visitors to move through the portfolio sideways instead of scrolling down
 - Long sections may not fit in one viewport; avoid clipping content.
 
 ## Remaining release decision
-- Whether to remove the prototype comparison selector before release; this evaluation does not authorize that change, merging, or publishing.
+- Resolved after evaluation: the user explicitly approved “Approve removal; keep Section snap”. The comparison selector and alternate-mode code have been removed, retaining Section snap and existing navigation.
+- This approval does not authorize merging or publishing. No device-specific gesture reports have been added; the separate keyboard/mobile navigation regression work remains separate.
