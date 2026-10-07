@@ -13,6 +13,7 @@ exclude:
   - README.md
   - NewChange1.md
   - PLAN.md
+  - scripts
   - LICENSES.md
   - Gemfile
   - Gemfile.lock
