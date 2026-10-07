@@ -7,6 +7,7 @@
     {% seo %}
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/horizontal-portfolio.css' | relative_url }}">
     <script>
       try { var theme = localStorage.getItem('theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch (e) {}
     </script>
@@ -19,5 +20,6 @@
     </main>
     {% include footer.html %}
     <script src="{{ '/assets/js/theme.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/horizontal-portfolio.js' | relative_url }}" defer></script>
   </body>
 </html>
