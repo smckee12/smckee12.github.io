@@ -17,6 +17,8 @@ It does not modify site content or deployment settings.
 
 For each of Home, About, Experience, and Contact:
 
+- Use the unified top header to navigate to failed sections; confirm one set of
+  section links, one initials link, one theme toggle, and no duplicate controls nav.
 - Simulate HTTP 503, rejected network requests, and successful responses missing
   the expected page markup, affecting section fetches but not document requests.
 - Confirm the error message, both recovery controls, cleared busy state, and

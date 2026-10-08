@@ -12,6 +12,7 @@ plugins:
 exclude:
   - README.md
   - NewChange1.md
+  - NewChange2.md
   - PLAN.md
   - scripts
   - LICENSES.md
