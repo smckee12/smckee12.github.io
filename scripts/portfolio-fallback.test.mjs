@@ -133,7 +133,14 @@ try {
     if (block) intercepted++;
     operation.catch(error => interceptionErrors.push(error.message));
   });
-  await cdp.send("Fetch.enable", { patterns: [{ urlPattern: "*" }] });
+  // Only pause section fetches. Pausing document images/styles can race a
+  // deliberate full-page navigation and produce stale interception IDs.
+  await cdp.send("Fetch.enable", {
+    patterns: [
+      { urlPattern: "*", resourceType: "Fetch" },
+      { urlPattern: "*", resourceType: "XHR" }
+    ]
+  });
 
   const panel = index => `document.querySelector('#portfolio-section-${index + 1}')`;
   const text = expression => `(${expression}).textContent.replace(/\\s+/g, ' ').trim()`;
@@ -144,6 +151,10 @@ try {
       document.readyState === 'complete' &&
       ${enhanced ? "document.querySelector('.horizontal-ready')" : "document.querySelector('#main > .page-shell')"} !== null`),
     `render ${path}`);
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.site-header .nav-list a').length"), 4);
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.theme-toggle').length"), 1);
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.wordmark').length"), 1);
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.horizontal-controls nav').length"), 0);
   }
   async function click(selector) {
     await cdp.evaluate(`(() => {
@@ -179,7 +190,7 @@ try {
     await navigate(index === 0 ? "/about/" : "/");
     await until(() => cdp.evaluate(`${panel(index)}?.querySelector('.horizontal-load-state') !== null`), "loading error");
     assert(intercepted > before, "Must actually simulate a failed fetch.");
-    await click(`.horizontal-section-nav a[data-index="${index}"]`);
+    await click(`.site-header .nav-list a[href="${pages[index].path}"]`);
     await until(() => cdp.evaluate(`${panel(index)}?.getAttribute('aria-hidden') === 'false' &&
       location.pathname === ${JSON.stringify(pages[index].path)}`), "error section active");
     assert.equal(await cdp.evaluate(`${panel(index)}.getAttribute('aria-busy')`), "false");

@@ -6,42 +6,19 @@
 .horizontal-controls {
   width: min(100% - 48px, 1312px);
   margin: 0 auto;
-  padding: 18px clamp(0px, 1vw, 14px) 17px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  padding: 11px clamp(0px, 1vw, 14px);
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  border-bottom: 1px solid var(--rule);
+  gap: 18px;
 }
 
 .horizontal-help {
-  grid-column: 1 / -1;
   margin: 0;
   color: var(--muted);
   font-size: 12px;
   line-height: 1.5;
-  text-align: center;
-}
-
-.horizontal-section-nav {
-  display: flex;
-  justify-content: center;
-  gap: clamp(8px, 2vw, 27px);
-}
-
-.horizontal-section-nav a {
-  padding: 8px 1px;
-  color: var(--muted);
-  font-size: 11px;
-  font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-}
-
-.horizontal-section-nav a[aria-current="page"] {
-  color: var(--accent-strong);
-  border-color: var(--accent);
+  text-align: left;
 }
 
 .horizontal-stepper {
@@ -209,28 +186,16 @@
 @media (max-width: 760px) {
   .horizontal-controls {
     width: 100%;
-    padding: 13px 20px 12px;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 10px 14px;
+    padding: 9px 20px 11px;
+    flex-direction: column-reverse;
+    gap: 8px;
   }
 
   .horizontal-stepper {
-    grid-column: 1;
-    grid-row: 2;
-    justify-self: center;
+    align-self: center;
   }
 
-  .horizontal-section-nav {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    justify-content: space-between;
-    gap: 6px;
-  }
-
-  .horizontal-section-nav a {
-    font-size: 10px;
-  }
-
+  .horizontal-help { font-size: 11px; text-align: center; }
   .horizontal-stage {
     height: min(70dvh, 760px);
     min-height: 220px;

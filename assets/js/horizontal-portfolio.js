@@ -8,8 +8,7 @@
 
   var sections = Array.prototype.map.call(nav.querySelectorAll("a"), function (link) {
     var label = link.textContent.trim();
-    var title = label === "Experience" ? "Work experience" : label;
-    return { title: title, href: link.href, link: link };
+    return { title: label, href: link.href, link: link };
   });
   if (sections.length !== 4) return;
 
@@ -31,18 +30,8 @@
   var controls = document.createElement("div");
   controls.className = "horizontal-controls";
   controls.innerHTML =
-    '<nav class="horizontal-section-nav" aria-label="Portfolio sections"></nav>' +
     '<div class="horizontal-stepper"><button type="button" data-step="-1" aria-label="Previous section">←</button>' +
     '<button type="button" data-step="1" aria-label="Next section">→</button></div>';
-
-  var sectionNav = controls.querySelector(".horizontal-section-nav");
-  sections.forEach(function (section, index) {
-    var link = document.createElement("a");
-    link.href = section.href;
-    link.textContent = section.title;
-    link.dataset.index = String(index);
-    sectionNav.appendChild(link);
-  });
 
   var stage = document.createElement("div");
   stage.className = "horizontal-stage";
@@ -54,12 +43,12 @@
   status.className = "horizontal-status";
   status.setAttribute("aria-live", "polite");
   status.setAttribute("aria-atomic", "true");
-  controls.appendChild(status);
   var help = document.createElement("p");
   help.className = "horizontal-help";
   help.id = "horizontal-help";
   help.textContent = "Swipe sideways or use the arrows to change sections. Scroll down within each section to read more.";
-  controls.appendChild(help);
+  controls.insertBefore(help, controls.firstChild);
+  controls.appendChild(status);
   stage.setAttribute("aria-describedby", help.id);
   stage.setAttribute("role", "region");
 
@@ -100,10 +89,6 @@
     var changed = index !== activeIndex;
     activeIndex = index;
 
-    sectionNav.querySelectorAll("a").forEach(function (link, linkIndex) {
-      if (linkIndex === index) link.setAttribute("aria-current", "page");
-      else link.removeAttribute("aria-current");
-    });
     sections.forEach(function (section, sectionIndex) {
       if (sectionIndex === index) section.link.setAttribute("aria-current", "page");
       else section.link.removeAttribute("aria-current");
